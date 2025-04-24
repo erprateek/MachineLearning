@@ -1,3 +1,11 @@
+# Sample usage with the Iris dataset
+# from sklearn.datasets import load_iris
+# iris = load_iris()
+# X = iris.data
+# df = pd.DataFrame(X, columns=iris.feature_names)
+
+pca, pcs, var_ratio = perform_pca(df)
+
 import numpy as np
 import pandas as pd
 import seaborn as sns
