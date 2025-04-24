@@ -47,3 +47,24 @@ def kl_divergence(p, q):
         if pi > 0 and qi > 0
     )
 
+# True distribution P
+#p = [0.6, 0.4]
+
+# Predicted distribution Q
+#q = [0.5, 0.5]
+
+#kl_divergence(p, q)  # Output: ~0.029 (measured in bits)
+
+def js_divergence(p, q):
+    m = [(pi + qi) / 2 for pi, qi in zip(p, q)]
+    return 0.5 * kl_divergence(p, m) + 0.5 * kl_divergence(q, m)
+
+#p = [0.6, 0.4]
+#q = [0.5, 0.5]
+
+#js_divergence(p, q)  # Output: ~0.0075
+
+def js_distance(p, q):
+    return math.sqrt(js_divergence(p, q))
+
+
