@@ -38,3 +38,12 @@ def information_gain(parent_labels, split_subsets):
  #   ['no', 'no', 'yes']  # right branch
 #]
 #information_gain(parent, split)  # Output: IG value
+
+def kl_divergence(p, q):
+    """KL Divergence D_KL(P || Q)"""
+    return sum(
+        pi * math.log2(pi / qi)
+        for pi, qi in zip(p, q)
+        if pi > 0 and qi > 0
+    )
+
